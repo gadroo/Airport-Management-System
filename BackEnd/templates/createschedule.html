@@ -1,0 +1,122 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Airport | Create Schedule</title>
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+        <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css'%}" /></noscript>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<SCRIPT language="javascript">
+	var x=0;
+	var y=1;
+	var p="s";
+	function add() {
+
+		x=x+y;
+	    var element = document.createElement("input");
+		element.setAttribute("type", "text");
+		element.setAttribute("placeholder","NEW");
+		element.setAttribute("name", "s"+x);
+        var para= document.createElement("P");
+        var t = document.createTextNode("Stop "+x+"");
+		para.appendChild(t);
+        var foo = document.getElementById("fooBar");
+		foo.appendChild(para);
+        foo.appendChild(element);
+        
+		var element1 = document.createElement("input");
+		element1.setAttribute("type", "Time");
+		element1.setAttribute("name", "a"+x);
+        var para1= document.createElement("P");
+        var t1 = document.createTextNode("Arrival "+x+"");
+		para1.appendChild(t1);
+        var foo = document.getElementById("fooBar");
+		foo.appendChild(para1);
+        foo.appendChild(element1);
+		
+        var element2 = document.createElement("input");
+		element2.setAttribute("type", "Time");
+		element2.setAttribute("name", "d"+x);
+        var para2= document.createElement("P");
+        var t2 = document.createTextNode("Departure "+x+"");
+		para2.appendChild(t2);
+        var foo = document.getElementById("fooBar");
+		foo.appendChild(para2);
+        foo.appendChild(element2);
+        var c=document.getElementById("count");
+        c.setAttribute("value",x);
+		}
+	</SCRIPT>
+    </head>
+    <body>
+        <form>{% csrf_token %}
+
+            <div id="page-wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <h1><a href="index.html">Air</a></h1>
+                        <nav>
+                            <a href="/live/"><input type="button" name="live" value="Live"></a>
+                            <a href="/schedule/"><input type="button" name="schedule" value="Schedule"></a>
+                            <a href="/airport/"><input type="button" name="airport" value="Airport"></a>
+                            <a href="/login/logout/"><input type="button" name="logout" value="Logout"></a>
+                        </nav>
+                    </header>
+              
+        </form>
+        <br><br><br><br>
+        <center>
+        <form action="createschedule.html" method="Post">{% csrf_token %}
+            <div class="row" style="padding-left: 40%;">
+                <div class="col-4">
+            *Flight ID:<input type="text" name="flightid" required></div></div><br>
+            
+            <!--Date: <input type="Date" name="departuredate"><br><br>-->
+			 
+            <input type="checkbox" id="sunday" name="sunday" value="sunday">
+			<label for="sunday">Sunday</label><br>
+			<input type="checkbox" id="monday" name="monday" value="monday">
+			<label for="monday">Monday</label><br>
+            <input type="checkbox" id="tuesday" name="tuesday" value="tuesday">
+			<label for="tuesday">Tuesday</label><br>
+            <input type="checkbox" id="wednesday" name="wednesday" value="wednesday">
+			<label for="wednesday">Wednesday</label><br>
+            <input type="checkbox" id="thursday" name="thursday" value="thursday">
+			<label for="thursday">Thursday</label><br>
+            <input type="checkbox" id="friday" name="friday" value="friday">
+			<label for="friday">Friday</label><br>
+            <input type="checkbox" id="saturday" name="saturday" value="saturday">
+			<label for="saturday">Saturday</label><br>
+            <div class="row" style="padding-left: 40%;">
+            *Source City:<div class="col-4"><input type="text" name="source" required></div>
+            </div>
+            <br>
+            <div class="row" style="padding-left: 40%;">
+            *Destination City:<div class="col-4"><input type="text" name="destination" required></div>
+            </div>
+            <br><br>
+            *Departure Time: <input type="Time" name="departures" required>
+            *Arrival Time: <input type="Time" name="arrivald" required><br><br>
+			
+            <input type="button" value="Add Intermediate" onclick="add()"><br><br>
+			<span id="fooBar"></span>
+            <input type="hidden" name="count" value="0" id="count"/>
+			<br><input type="submit" class="btn btn-success" value="Create Schedule">
+        </form></center>
+                <!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/jquery.scrollex.min.js'%}"></script>
+<script src="{% static 'assets/js/browser.min.js'%}"></script>
+<script src="{% static 'assets/js/breakpoints.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+<script src="{% static 'assets/js/main.js'%}"></script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Airport | Dashboard</title>
+  <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+        <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css'%}" /></noscript>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  .border {
+    display: inline-block;
+    width: 1000px;
+    height: 500px;
+    margin: 180px;
+  }
+  </style>
+</head>
+<body>
+  <center>
+    <section id="banner">
+        <header>
+            <div class="inner">
+                <h2>DASHBOARD</h2>
+                <h3>Select an option</h3>
+            </div>
+        </header>
+        <p></p>
+
+
+<div class="mx-auto" style="width:510px">
+  <div class="btn-group">
+      <form>
+          <p>
+          <a href="/live/" class="button primary"><input type="button" name="live" value="Live"></a></p>
+          <p>
+          <a href="/schedule/" class="button primary"><input type="button" name="schedule" value="Schedule"></a></p>
+          <p>
+          <a href="/airport/" class="button primary"><input type="button" name="airport" value="Airport"></a></p>
+      </form>
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/jquery.scrollex.min.js'%}"></script>
+<script src="{% static 'assets/js/browser.min.js'%}"></script>
+<script src="{% static 'assets/js/breakpoints.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+<script src="{% static 'assets/js/main.js'%}"></script>
+</body>
+</html>

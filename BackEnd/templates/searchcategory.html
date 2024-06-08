@@ -1,0 +1,68 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Airport | View Schedule</title>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+        <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css'%}" /></noscript>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <!--<form>
+            Flight ID:<input type="text" name="flightid"><br><br>
+            
+            Date: <input type="Date" name="departuredate"><br><br>
+
+            Source City:<input type="text" name="sourcecity"><br>
+            Destination City:<input type="text" name="destinationcity"><br><br>
+            
+            <input type="submit" value="Create Schedule">
+        </form>-->
+        <form>{% csrf_token %}
+
+            <div id="page-wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <h1><a href="index.html">Air</a></h1>
+                        <nav>
+                            <a href="/live/"><input type="button" name="live" value="Live"></a>
+                            <a href="/schedule/"><input type="button" name="schedule" value="Schedule"></a>
+                            <a href="/airport/"><input type="button" name="airport" value="Airport"></a>
+                            <a href="/login/logout/"><input type="button" name="logout" value="Logout"></a>
+                        </nav>
+                    </header>
+              
+        </form>
+        <center>
+        <section id="banner">
+            <header>
+                <div class="inner">
+                    <h3>Enter Flight details to view schedule</h3>
+                </div>
+            </header>
+        <form action="searchid" method="Post">{% csrf_token %}
+            <input type="submit" value="Search by ID" name="id" class="button primary"><br><br>
+            <!--<input type="submit" value="Search by City" name="id"><br><br>-->
+        </form>
+        <form action="searchcity" method="Post">{% csrf_token %}
+            <input type="submit" class="button primary" value="Search by City"/>
+        </form>
+    </body>
+    <!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/jquery.scrollex.min.js'%}"></script>
+<script src="{% static 'assets/js/browser.min.js'%}"></script>
+<script src="{% static 'assets/js/breakpoints.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+<script src="{% static 'assets/js/main.js'%}"></script>
+</html>

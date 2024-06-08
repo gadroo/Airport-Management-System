@@ -1,0 +1,55 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>The Airport | Login</title>
+        <center><h2>Enter your Login Credentials.</h2></center>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <center>
+            <div class="wrapper">
+                <div class="inner">
+                    <form action="/login/doauth" method="post">{% csrf_token %}
+                        {% if message %}
+                        {{ message }}
+                        {% endif %}
+                        <div class="field">
+                            <label for="name">Username</label>
+                            <input type="text" name="username" required="username required">
+                        </div>
+                        <p></p>
+                        <div class="field">
+                            <label for="email">Password</label>
+                            <input type="password" name="password" required="password required">
+                        </div>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-5"></div>
+                            <div class="col-2"><input type="submit" value="Submit"/></div>
+                            <div class="col-5"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            
+        </center>
+
+    <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+    </body>
+</html>

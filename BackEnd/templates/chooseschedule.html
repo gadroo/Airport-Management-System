@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>The Airport | Live Status</title>
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+        <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css'%}" /></noscript>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        {% csrf_token %}
+        <div id="page-wrapper">
+
+            <!-- Header -->
+                <header id="header">
+                    <h1><a href="index.html">Air</a></h1>
+                    <nav>
+                        <a href="/live/"><input type="button" name="live" value="Live"></a>
+                        <a href="/schedule/"><input type="button" name="schedule" value="Schedule"></a>
+                        <a href="/airport/"><input type="button" name="airport" value="Airport"></a>
+                        <a href="/login/logout/"><input type="button" name="logout" value="Logout"></a>
+                    </nav>
+                </header>
+          
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="banner">
+        <center>
+        <header>
+            <div class="inner">
+                <h2>Welcome to AIR</h2>
+            </div>
+        </header>
+        <p></p>
+        <form action="new.html">{% csrf_token %}
+            <input type="submit" class="button primary" value="Create Schedule">
+        </form>
+        <form action="update.html">{% csrf_token %}
+            <input type="submit" class="button primary" value="Update Schedule">
+        </form>
+        <form  action="choosecategory.html">{% csrf_token %}
+            <input type="submit" class="button primary" value="View Schedule">
+        </form>
+    </center>
+                <!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/jquery.scrollex.min.js'%}"></script>
+<script src="{% static 'assets/js/browser.min.js'%}"></script>
+<script src="{% static 'assets/js/breakpoints.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+<script src="{% static 'assets/js/main.js'%}"></script>
+    </body>
+</html>

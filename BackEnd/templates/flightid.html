@@ -1,0 +1,63 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Airport | Search by ID</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+        <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css'%}" /></noscript>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form>{% csrf_token %}
+
+            <div id="page-wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <h1><a href="index.html">Air</a></h1>
+                        <nav>
+                            <a href="/live/"><input type="button" name="live" value="Live"></a>
+                            <a href="/schedule/"><input type="button" name="schedule" value="Schedule"></a>
+                            <a href="/airport/"><input type="button" name="airport" value="Airport"></a>
+                            <a href="/login/logout/"><input type="button" name="logout" value="Logout"></a>
+                        </nav>
+                    </header>
+              
+        </form>
+        <form action="id.html" method="Post">{% csrf_token %}
+            <br><br><br>
+       *Flight ID: <input type="text" name="flightid" required><br><br>
+       <input type="submit" value="Submit">
+       <br>
+       <center>
+       <section>
+        <br>
+        <h3 class="major">Details</h3>
+            {% if messages %}
+			{{messages}}
+		    {% endif %}
+            {% for var in q %}
+            <p>Flight Found!</p>
+            {{var.flightid.flightid}}<p>Arrival: 
+                {{ var.source }} {{ var.departure }}</p><p>Departure: 
+                {{ var.destination }}  {{ var.arrival }}</p> 
+            {% endfor %}
+       </section>
+   </form>
+   <!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/jquery.scrollex.min.js'%}"></script>
+<script src="{% static 'assets/js/browser.min.js'%}"></script>
+<script src="{% static 'assets/js/breakpoints.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+<script src="{% static 'assets/js/main.js'%}"></script>
+    </body>
+</html>
